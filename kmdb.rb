@@ -320,10 +320,11 @@ end
 puts ""
 puts "Top Cast"
 puts "========"
+
+batman_movies = Movie.where({"rated" => "PG-13"})
 for movie in batman_movies
     title = movie["title"]
-    year_released = movie["year_released"]
-    rated = movie["rated"]
-    studio_name = studio["name"]
-    puts "#{title} #{year_released} #{rated} #{studio_name}"
+    actor_name = actor["name"]
+    character_name = role["character_name"]
+    puts "#{title} #{actor_name} #{character_name}"
 end
