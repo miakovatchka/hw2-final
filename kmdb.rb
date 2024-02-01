@@ -88,6 +88,9 @@
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
+
+
+
 # Destroy all existing data
 Studio.destroy_all
 Actor.destroy_all
@@ -316,15 +319,25 @@ for movie in batman_movies
 end
 
 
-# Prints a header for the cast output
+# Prints a header for the cast output # movie actor character
 puts ""
 puts "Top Cast"
 puts "========"
 
-batman_movies = Movie.where({"rated" => "PG-13"})
-for movie in batman_movies
-    title = movie["title"]
-    actor_name = actor["name"]
+first_movie = Movie.find_by({"title" => "Batman Begins"})
+first_movie_roles = Role.where("movie_id" => first_movie["id"])
+
+first_movie_name = first_movie.title
+
+for role in first_movie_roles
     character_name = role["character_name"]
-    puts "#{title} #{actor_name} #{character_name}"
+    puts "#{first_movie_name} #{character_name}"
 end
+
+  
+    
+
+
+
+
+
