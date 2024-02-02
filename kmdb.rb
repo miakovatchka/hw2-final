@@ -354,7 +354,7 @@ for role in second_movie_roles
     actor_id = role["actor_id"]
     actor_name = ""
     for actor in all_actors
-        if actor["id"] == role ["actor_id"]
+        if actor["id"] == role["actor_id"]
             actor_name = actor["name"]
         break
         end
