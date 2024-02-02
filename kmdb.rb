@@ -343,8 +343,43 @@ end
     puts "#{first_movie_name} #{character_name} #{actor_name}"
 end
 
+second_movie = Movie.find_by({"title" => "The Dark Knight"})
+second_movie_roles = Role.where("movie_id" => second_movie["id"])
+all_actors = Actor.all
 
-  
+second_movie_name = second_movie.title
+
+for role in second_movie_roles
+    character_name = role["character_name"]
+    actor_id = role["actor_id"]
+    actor_name = ""
+    for actor in all_actors
+        if actor["id"] == role ["actor_id"]
+            actor_name = actor["name"]
+        break
+        end
+end
+    puts "#{second_movie_name} #{character_name} #{actor_name}"
+end
+
+third_movie = Movie.find_by({"title" => "The Dark Knight Rises"})
+third_movie_roles = Role.where("movie_id" => third_movie["id"])
+all_actors = Actor.all
+
+third_movie_name = third_movie.title
+
+for role in third_movie_roles
+    character_name = role["character_name"]
+    actor_id = role["actor_id"]
+    actor_name = ""
+    for actor in all_actors
+        if actor["id"] == role ["actor_id"]
+            actor_name = actor["name"]
+        break
+        end
+end
+    puts "#{third_movie_name} #{character_name} #{actor_name}"
+end
     
 
 
