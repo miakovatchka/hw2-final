@@ -326,13 +326,23 @@ puts "========"
 
 first_movie = Movie.find_by({"title" => "Batman Begins"})
 first_movie_roles = Role.where("movie_id" => first_movie["id"])
+all_actors = Actor.all
 
 first_movie_name = first_movie.title
 
 for role in first_movie_roles
     character_name = role["character_name"]
-    puts "#{first_movie_name} #{character_name}"
+    actor_id = role["actor_id"]
+    actor_name = ""
+    for actor in all_actors
+        if actor["id"] == role ["actor_id"]
+            actor_name = actor["name"]
+        break
+        end
 end
+    puts "#{first_movie_name} #{character_name} #{actor_name}"
+end
+
 
   
     
